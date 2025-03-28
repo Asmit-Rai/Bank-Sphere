@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
-import {signIn} from "../lib/actions/user.actions"
+import {getLoggedInUser, signIn} from "../lib/actions/user.actions"
 import { signUp } from '../lib/actions/user.actions';
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -51,12 +51,12 @@ const AuthForm = ({ type }: { type: string }) => {
         }
 
         if(type === 'sign-in') {
-          const response = await signIn({
-            email: data.email,
-            password: data.password,
-          })
+          // const response = await signIn({
+          //   email: data.email,
+          //   password: data.password,
+          // })
 
-          if(response) router.push('/')
+          // if(response) router.push('/')
         }
       } catch (error) {
         console.log(error);
